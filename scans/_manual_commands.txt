@@ -1,0 +1,102 @@
+[*] msrpc on tcp/135
+
+	[-] RPC Client:
+
+		rpcclient -p 135 -U "" servesup
+
+[*] netbios-ssn on tcp/139
+
+	[-] Nmap scans for SMB vulnerabilities that could potentially cause a DoS if scanned (according to Nmap). Be careful:
+
+		nmap -vv --reason -Pn -T4 -sV -p 139 --script="smb-vuln-ms06-025" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp139/tcp_139_smb_ms06-025.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp139/xml/tcp_139_smb_ms06-025.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sV -p 139 --script="smb-vuln-ms07-029" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp139/tcp_139_smb_ms07-029.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp139/xml/tcp_139_smb_ms07-029.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sV -p 139 --script="smb-vuln-ms08-067" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp139/tcp_139_smb_ms08-067.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp139/xml/tcp_139_smb_ms08-067.xml" servesup
+
+[*] microsoft-ds on tcp/445
+
+	[-] Nmap scans for SMB vulnerabilities that could potentially cause a DoS if scanned (according to Nmap). Be careful:
+
+		nmap -vv --reason -Pn -T4 -sV -p 445 --script="smb-vuln-ms06-025" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp445/tcp_445_smb_ms06-025.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp445/xml/tcp_445_smb_ms06-025.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sV -p 445 --script="smb-vuln-ms07-029" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp445/tcp_445_smb_ms07-029.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp445/xml/tcp_445_smb_ms07-029.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sV -p 445 --script="smb-vuln-ms08-067" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/tcp445/tcp_445_smb_ms08-067.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/tcp445/xml/tcp_445_smb_ms08-067.xml" servesup
+
+[*] http on tcp/5357
+
+	[-] (feroxbuster) Multi-threaded recursive directory/file enumeration for web servers using various wordlists:
+
+		feroxbuster -u http://servesup:5357 -t 10 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x "txt,html,php,asp,aspx,jsp" -v -k -n -o /home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_feroxbuster_dirbuster.txt
+
+	[-] Credential bruteforcing commands (don't run these without modifying them):
+
+		hydra -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e nsr -s 5357 -o "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_auth_hydra.txt" http-get://servesup/path/to/auth/area
+
+		medusa -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e ns -n 5357 -O "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_auth_medusa.txt" -M http -h servesup -m DIR:/path/to/auth/area
+
+		hydra -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e nsr -s 5357 -o "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_form_hydra.txt" http-post-form://servesup/path/to/login.php:username=^USER^&password=^PASS^:invalid-login-message
+
+		medusa -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e ns -n 5357 -O "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_form_medusa.txt" -M web-form -h servesup -m FORM:/path/to/login.php -m FORM-DATA:"post?username=&password=" -m DENY-SIGNAL:"invalid login message"
+
+	[-] (nikto) old but generally reliable web server enumeration tool:
+
+		nikto -ask=no -h http://servesup:5357 2>&1 | tee "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_nikto.txt"
+
+	[-] (wpscan) WordPress Security Scanner (useful if WordPress is found):
+
+		wpscan --url http://servesup:5357/ --no-update -e vp,vt,tt,cb,dbe,u,m --plugins-detection aggressive --plugins-version-detection aggressive -f cli-no-color 2>&1 | tee "/home/beed2112/hackclub/results/servesup/scans/tcp5357/tcp_5357_http_wpscan.txt"
+
+[*] netbios-ns on udp/137
+
+	[-] Nmap scans for SMB vulnerabilities that could potentially cause a DoS if scanned (according to Nmap). Be careful:
+
+		nmap -vv --reason -Pn -T4 -sU -sV -p 137 --script="smb-vuln-ms06-025" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/udp137/udp_137_smb_ms06-025.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/udp137/xml/udp_137_smb_ms06-025.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sU -sV -p 137 --script="smb-vuln-ms07-029" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/udp137/udp_137_smb_ms07-029.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/udp137/xml/udp_137_smb_ms07-029.xml" servesup
+
+		nmap -vv --reason -Pn -T4 -sU -sV -p 137 --script="smb-vuln-ms08-067" --script-args="unsafe=1" -oN "/home/beed2112/hackclub/results/servesup/scans/udp137/udp_137_smb_ms08-067.txt" -oX "/home/beed2112/hackclub/results/servesup/scans/udp137/xml/udp_137_smb_ms08-067.xml" servesup
+
+[*] msrpc on tcp/49664
+
+	[-] RPC Client:
+
+		rpcclient -p 49664 -U "" servesup
+
+[*] msrpc on tcp/49665
+
+	[-] RPC Client:
+
+		rpcclient -p 49665 -U "" servesup
+
+[*] msrpc on tcp/49666
+
+	[-] RPC Client:
+
+		rpcclient -p 49666 -U "" servesup
+
+[*] msrpc on tcp/49667
+
+	[-] RPC Client:
+
+		rpcclient -p 49667 -U "" servesup
+
+[*] msrpc on tcp/49668
+
+	[-] RPC Client:
+
+		rpcclient -p 49668 -U "" servesup
+
+[*] msrpc on tcp/49670
+
+	[-] RPC Client:
+
+		rpcclient -p 49670 -U "" servesup
+
+[*] msrpc on tcp/49671
+
+	[-] RPC Client:
+
+		rpcclient -p 49671 -U "" servesup
+

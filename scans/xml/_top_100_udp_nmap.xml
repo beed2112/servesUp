@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Thu Mar  3 15:25:00 2022 as: nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /home/beed2112/hackclub/results/servesup/scans/_top_100_udp_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/xml/_top_100_udp_nmap.xml servesup -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sU -A -&#45;top-ports 100 -oN /home/beed2112/hackclub/results/servesup/scans/_top_100_udp_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/xml/_top_100_udp_nmap.xml servesup" start="1646346300" startstr="Thu Mar  3 15:25:00 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="udp" protocol="udp" numservices="100" services="7,9,17,19,49,53,67-69,80,88,111,120,123,135-139,158,161-162,177,427,443,445,497,500,514-515,518,520,593,623,626,631,996-999,1022-1023,1025-1030,1433-1434,1645-1646,1701,1718-1719,1812-1813,1900,2000,2048-2049,2222-2223,3283,3456,3703,4444,4500,5000,5060,5353,5632,9200,10000,17185,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49181-49182,49185-49186,49188,49190-49194,49200-49201,65024"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1646346300"/>
+<taskend task="NSE" time="1646346300"/>
+<taskbegin task="NSE" time="1646346300"/>
+<taskend task="NSE" time="1646346300"/>
+<taskbegin task="NSE" time="1646346300"/>
+<taskend task="NSE" time="1646346300"/>
+<taskbegin task="UDP Scan" time="1646346300"/>
+<taskend task="UDP Scan" time="1646346414" extrainfo="100 total ports"/>
+<taskbegin task="Service scan" time="1646346414"/>
+<taskprogress task="Service scan" time="1646346475" percent="12.50" remaining="428" etc="1646346902"/>
+<taskprogress task="Service scan" time="1646346507" percent="68.75" remaining="43" etc="1646346549"/>
+<taskend task="Service scan" time="1646346517" extrainfo="16 services on 1 host"/>
+<taskbegin task="NSE" time="1646346519"/>
+<taskprogress task="NSE" time="1646346550" percent="98.81" remaining="1" etc="1646346550"/>
+<taskprogress task="NSE" time="1646346580" percent="99.18" remaining="1" etc="1646346581"/>
+<taskprogress task="NSE" time="1646346610" percent="99.41" remaining="1" etc="1646346611"/>
+<taskprogress task="NSE" time="1646346640" percent="99.54" remaining="1" etc="1646346641"/>
+<taskend task="NSE" time="1646346660"/>
+<taskbegin task="NSE" time="1646346660"/>
+<taskend task="NSE" time="1646346661"/>
+<taskbegin task="NSE" time="1646346661"/>
+<taskend task="NSE" time="1646346661"/>
+<host starttime="1646346301" endtime="1646346661"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.3.22" addrtype="ipv4"/>
+<hostnames>
+<hostname name="servesup" type="user"/>
+<hostname name="servesup" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="84">
+<extrareasons reason="port-unreach" count="84" proto="udp" ports="7,9,19,49,68-69,80,88,111,120,123,135-136,139,158,161-162,177,427,443,445,497,515,518,520,593,623,626,631,996-997,999,1022-1023,1025-1026,1028-1030,1433-1434,1645-1646,1701,1719,1812-1813,2000,2048-2049,2222-2223,3283,3456,3703,4444,5000,5060,5632,9200,10000,20031,30718,31337,32768-32769,32771,32815,33281,49152-49154,49156,49182,49185,49188,49190-49194,49200-49201,65024"/>
+</extraports>
+<port protocol="udp" portid="17"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="qotd" method="table" conf="3"/></port>
+<port protocol="udp" portid="53"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="domain" method="table" conf="3"/></port>
+<port protocol="udp" portid="67"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="dhcps" method="table" conf="3"/></port>
+<port protocol="udp" portid="137"><state state="open" reason="udp-response" reason_ttl="127"/><service name="netbios-ns" product="Microsoft Windows netbios-ns" extrainfo="workgroup: WORKGROUP" hostname="DESKTOP-LCE941G" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service><script id="nbns-interfaces" output="&#xa;  hostname: DESKTOP-LCE941G&#xa;  interfaces: &#xa;    192.168.3.22"><elem key="hostname">DESKTOP-LCE941G</elem>
+<table key="interfaces">
+<elem>192.168.3.22</elem>
+</table>
+</script></port>
+<port protocol="udp" portid="138"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="netbios-dgm" method="table" conf="3"/></port>
+<port protocol="udp" portid="500"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="isakmp" method="table" conf="3"/></port>
+<port protocol="udp" portid="514"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="syslog" method="table" conf="3"/></port>
+<port protocol="udp" portid="998"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="puparp" method="table" conf="3"/></port>
+<port protocol="udp" portid="1027"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="udp" portid="1718"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="h225gatedisc" method="table" conf="3"/></port>
+<port protocol="udp" portid="1900"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="upnp" method="table" conf="3"/></port>
+<port protocol="udp" portid="4500"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="nat-t-ike" method="table" conf="3"/></port>
+<port protocol="udp" portid="5353"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="zeroconf" method="table" conf="3"/></port>
+<port protocol="udp" portid="17185"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="wdbrpc" method="table" conf="3"/></port>
+<port protocol="udp" portid="49181"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+<port protocol="udp" portid="49186"><state state="open|filtered" reason="no-response" reason_ttl="0"/><service name="unknown" method="table" conf="3"/></port>
+</ports>
+<os><portused state="closed" proto="udp" portid="7"/>
+<osfingerprint fingerprint="SCAN(V=7.92%E=4%D=3/3%OT=%CT=%CU=7%PV=Y%DS=2%DC=I%G=N%TM=622141A5%P=x86_64-pc-linux-gnu)&#xa;T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)&#xa;U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)&#xa;IE(R=Y%DFI=N%T=80%CD=Z)&#xa;"/>
+</os>
+<distance value="2"/>
+<hostscript><script id="nbstat" output="NetBIOS name: DESKTOP-LCE941G, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:50:56:a5:1b:db (VMware)&#xa;Names:&#xa;  WORKGROUP&lt;00&gt;        Flags: &lt;group&gt;&lt;active&gt;&#xa;  DESKTOP-LCE941G&lt;00&gt;  Flags: &lt;unique&gt;&lt;active&gt;&#xa;  DESKTOP-LCE941G&lt;20&gt;  Flags: &lt;unique&gt;&lt;active&gt;&#xa;Statistics:&#xa;  00 50 56 a5 1b db 00 00 00 00 00 00 00 00 00 00 00&#xa;  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00&#xa;  00 00 00 00 00 00 00 00 00 00 00 00 00 00"/></hostscript><trace>
+<hop ttl="1" ipaddr="192.168.3.22" rtt="61.31" host="servesup"/>
+</trace>
+<times srtt="61309" rttvar="504" to="100000"/>
+</host>
+<taskbegin task="NSE" time="1646346661"/>
+<taskend task="NSE" time="1646346661"/>
+<taskbegin task="NSE" time="1646346661"/>
+<taskend task="NSE" time="1646346661"/>
+<taskbegin task="NSE" time="1646346661"/>
+<taskend task="NSE" time="1646346661"/>
+<runstats><finished time="1646346661" timestr="Thu Mar  3 15:31:01 2022" summary="Nmap done at Thu Mar  3 15:31:01 2022; 1 IP address (1 host up) scanned in 360.91 seconds" elapsed="360.91" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

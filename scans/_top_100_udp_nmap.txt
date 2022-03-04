@@ -1,0 +1,67 @@
+# Nmap 7.92 scan initiated Thu Mar  3 15:25:00 2022 as: nmap -vv --reason -Pn -T4 -sU -A --top-ports 100 -oN /home/beed2112/hackclub/results/servesup/scans/_top_100_udp_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/xml/_top_100_udp_nmap.xml servesup
+Warning: 192.168.3.22 giving up on port because retransmission cap hit (6).
+Increasing send delay for 192.168.3.22 from 100 to 200 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 192.168.3.22 from 200 to 400 due to 11 out of 11 dropped probes since last increase.
+Increasing send delay for 192.168.3.22 from 400 to 800 due to 11 out of 13 dropped probes since last increase.
+Increasing send delay for 192.168.3.22 from 800 to 1000 due to 11 out of 19 dropped probes since last increase.
+adjust_timeouts2: packet supposedly had rtt of -64188 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -64188 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -97228 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -97228 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -105936 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -105936 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -106214 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -106214 microseconds.  Ignoring time.
+Nmap scan report for servesup (192.168.3.22)
+Host is up, received user-set (0.061s latency).
+Scanned at 2022-03-03 15:25:01 MST for 360s
+Not shown: 84 closed udp ports (port-unreach)
+PORT      STATE         SERVICE      REASON               VERSION
+17/udp    open|filtered qotd         no-response
+53/udp    open|filtered domain       no-response
+67/udp    open|filtered dhcps        no-response
+137/udp   open          netbios-ns   udp-response ttl 127 Microsoft Windows netbios-ns (workgroup: WORKGROUP)
+| nbns-interfaces: 
+|   hostname: DESKTOP-LCE941G
+|   interfaces: 
+|_    192.168.3.22
+138/udp   open|filtered netbios-dgm  no-response
+500/udp   open|filtered isakmp       no-response
+514/udp   open|filtered syslog       no-response
+998/udp   open|filtered puparp       no-response
+1027/udp  open|filtered unknown      no-response
+1718/udp  open|filtered h225gatedisc no-response
+1900/udp  open|filtered upnp         no-response
+4500/udp  open|filtered nat-t-ike    no-response
+5353/udp  open|filtered zeroconf     no-response
+17185/udp open|filtered wdbrpc       no-response
+49181/udp open|filtered unknown      no-response
+49186/udp open|filtered unknown      no-response
+Too many fingerprints match this host to give specific OS details
+TCP/IP fingerprint:
+SCAN(V=7.92%E=4%D=3/3%OT=%CT=%CU=7%PV=Y%DS=2%DC=I%G=N%TM=622141A5%P=x86_64-pc-linux-gnu)
+T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)
+IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: DESKTOP-LCE941G; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| nbstat: NetBIOS name: DESKTOP-LCE941G, NetBIOS user: <unknown>, NetBIOS MAC: 00:50:56:a5:1b:db (VMware)
+| Names:
+|   WORKGROUP<00>        Flags: <group><active>
+|   DESKTOP-LCE941G<00>  Flags: <unique><active>
+|   DESKTOP-LCE941G<20>  Flags: <unique><active>
+| Statistics:
+|   00 50 56 a5 1b db 00 00 00 00 00 00 00 00 00 00 00
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|_  00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   61.31 ms servesup (192.168.3.22)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Mar  3 15:31:01 2022 -- 1 IP address (1 host up) scanned in 360.91 seconds

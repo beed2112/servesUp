@@ -1,0 +1,61 @@
+# Nmap 7.92 scan initiated Thu Mar  3 15:25:00 2022 as: nmap -vv --reason -Pn -T4 -sV -sC --version-all -A --osscan-guess -oN /home/beed2112/hackclub/results/servesup/scans/_quick_tcp_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/xml/_quick_tcp_nmap.xml servesup
+Nmap scan report for servesup (192.168.3.22)
+Host is up, received user-set (0.061s latency).
+Scanned at 2022-03-03 15:25:01 MST for 78s
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE       REASON          VERSION
+135/tcp  open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+139/tcp  open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds? syn-ack ttl 127
+5357/tcp open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Service Unavailable
+Aggressive OS guesses: Microsoft Windows 7 (91%), Microsoft Windows Server 2008 SP1 or Windows Server 2008 R2 (90%), Microsoft Windows XP SP3 (89%), Microsoft Windows Server 2008 SP1 (88%), Microsoft Windows Server 2008 R2 (88%), Microsoft Windows 10 (88%), Microsoft Windows 7 or Windows Server 2008 R2 (88%), Microsoft Windows 7 SP1 or Windows Server 2008 R2 (88%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 or 2008 R2 SP1 (88%), Microsoft Windows Vista SP0 or SP1, Windows Server 2008 SP1, or Windows 7 (88%)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=3/3%OT=135%CT=1%CU=37814%PV=Y%DS=2%DC=I%G=Y%TM=6221408
+OS:B%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=109%TI=I%II=I%SS=S%TS=U)SEQ
+OS:(SP=102%GCD=1%ISR=109%II=I%TS=U)OPS(O1=M564NW8NNS%O2=M564NW8NNS%O3=M564N
+OS:W8%O4=M564NW8NNS%O5=M564NW8NNS%O6=M564NNS)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4
+OS:=FFFF%W5=FFFF%W6=FF70)ECN(R=Y%DF=Y%T=80%W=FFFF%O=M564NW8NNS%CC=N%Q=)T1(R
+OS:=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5(R=Y%DF=Y%T=80
+OS:%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=N)T7(R=N)U1(R=Y%DF=N%T=80%IPL=164%UN=
+OS:0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)U1(R=N)IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=258 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| p2p-conficker: 
+|   Checking for Conficker.C or higher...
+|   Check 1 (port 37833/tcp): CLEAN (Couldn't connect)
+|   Check 2 (port 16669/tcp): CLEAN (Couldn't connect)
+|   Check 3 (port 63302/udp): CLEAN (Timeout)
+|   Check 4 (port 42843/udp): CLEAN (Timeout)
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-time: 
+|   date: 2022-03-03T22:25:09
+|_  start_date: N/A
+|_clock-skew: -1m00s
+| nbstat: NetBIOS name: DESKTOP-LCE941G, NetBIOS user: <unknown>, NetBIOS MAC: 00:50:56:a5:1b:db (VMware)
+| Names:
+|   WORKGROUP<00>        Flags: <group><active>
+|   DESKTOP-LCE941G<00>  Flags: <unique><active>
+|   DESKTOP-LCE941G<20>  Flags: <unique><active>
+| Statistics:
+|   00 50 56 a5 1b db 00 00 00 00 00 00 00 00 00 00 00
+|   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+|_  00 00 00 00 00 00 00 00 00 00 00 00 00 00
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   61.30 ms servesup (192.168.3.22)
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Mar  3 15:26:19 2022 -- 1 IP address (1 host up) scanned in 79.21 seconds
