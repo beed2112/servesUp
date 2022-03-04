@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Thu Mar  3 15:35:00 2022 as: nmap -vv -&#45;reason -Pn -T4 -sV -p 49666 -&#45;script=banner,msrpc-enum,rpc-grind,rpcinfo -oN /home/beed2112/hackclub/results/servesup/scans/tcp49666/tcp_49666_rpc_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/tcp49666/xml/tcp_49666_rpc_nmap.xml servesup -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -T4 -sV -p 49666 -&#45;script=banner,msrpc-enum,rpc-grind,rpcinfo -oN /home/beed2112/hackclub/results/servesup/scans/tcp49666/tcp_49666_rpc_nmap.txt -oX /home/beed2112/hackclub/results/servesup/scans/tcp49666/xml/tcp_49666_rpc_nmap.xml servesup" start="1646346900" startstr="Thu Mar  3 15:35:00 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="49666"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1646346900"/>
+<taskend task="NSE" time="1646346900"/>
+<taskbegin task="NSE" time="1646346900"/>
+<taskend task="NSE" time="1646346900"/>
+<taskbegin task="SYN Stealth Scan" time="1646346900"/>
+<taskend task="SYN Stealth Scan" time="1646346901" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1646346901"/>
+<taskend task="Service scan" time="1646346955" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1646346955"/>
+<taskend task="NSE" time="1646346970"/>
+<taskbegin task="NSE" time="1646346970"/>
+<taskend task="NSE" time="1646346970"/>
+<host starttime="1646346901" endtime="1646346970"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="192.168.3.22" addrtype="ipv4"/>
+<hostnames>
+<hostname name="servesup" type="user"/>
+<hostname name="servesup" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="49666"><state state="open" reason="syn-ack" reason_ttl="127"/><service name="msrpc" product="Microsoft Windows RPC" ostype="Windows" method="probed" conf="10"><cpe>cpe:/o:microsoft:windows</cpe></service></port>
+</ports>
+<times srtt="60771" rttvar="60771" to="303855"/>
+</host>
+<taskbegin task="NSE" time="1646346970"/>
+<taskend task="NSE" time="1646346970"/>
+<taskbegin task="NSE" time="1646346970"/>
+<taskend task="NSE" time="1646346970"/>
+<runstats><finished time="1646346970" timestr="Thu Mar  3 15:36:10 2022" summary="Nmap done at Thu Mar  3 15:36:10 2022; 1 IP address (1 host up) scanned in 70.31 seconds" elapsed="70.31" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
