@@ -1,0 +1,16 @@
+nbtscan -rvh 192.168.3.22 
+Doing NBT name scan for addresses from 192.168.3.22
+
+
+NetBIOS Name Table for Host 192.168.3.22:
+
+Incomplete packet, 155 bytes long.
+Name             Service          Type             
+----------------------------------------
+DESKTOP-LCE941G  Workstation Service
+WORKGROUP        Domain Name
+DESKTOP-LCE941G  File Server Service
+
+Adapter address: 00:50:56:a5:1b:db
+----------------------------------------
+
